@@ -61,6 +61,7 @@ html, body {
 .item {
   width: 100%;
   padding: 1em;
+  margin: 2em 0;
   -webkit-box-shadow: 2px 2px 5px #d1d9e6 inset, -2px -2px 5px #fff inset;
           box-shadow: 2px 2px 5px #d1d9e6 inset, -2px -2px 5px #fff inset;
   border-radius: 0.5rem;
@@ -88,12 +89,12 @@ html, body {
 
 .item section h2 a:hover {
   color: #002c5c;
-  letter-spacing: 0.2rem;
+  -webkit-animation: title-hover 1s ease-in-out;
+          animation: title-hover 1s ease-in-out;
 }
 
 .item section article p {
   margin: 0.5rem;
-  font-size: 0.8rem;
   color: #555555;
 }
 
@@ -117,5 +118,29 @@ html, body {
 .item img {
   height: 8rem;
   border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.item img:hover {
+  -webkit-filter: drop-shadow(8px 8px 10px #d1d9e6);
+          filter: drop-shadow(8px 8px 10px #d1d9e6);
+}
+
+@-webkit-keyframes title-hover {
+  0%, 100% {
+    letter-spacing: normal;
+  }
+  50% {
+    letter-spacing: 0.2em;
+  }
+}
+
+@keyframes title-hover {
+  0%, 100% {
+    letter-spacing: normal;
+  }
+  50% {
+    letter-spacing: 0.2em;
+  }
 }
 /*# sourceMappingURL=style.css.map */

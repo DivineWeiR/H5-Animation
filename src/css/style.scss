@@ -59,6 +59,7 @@ html,body{
 .item{
     width:100%;
     padding:1em;
+    margin:2em 0;
     box-shadow: $inner-shadow;
     border-radius: 0.5rem;
     display: grid;
@@ -76,11 +77,11 @@ html,body{
         }
         h2 a:hover{
             color:$theme-color-darker;
-            letter-spacing: 0.2rem;
+            // letter-spacing: 0.2rem;
+            animation: title-hover 1s ease-in-out;
         }
         article p{
             margin: 0.5rem;
-            font-size: 0.8rem;
             color: #555555;
         }
         footer{
@@ -98,9 +99,25 @@ html,body{
         height:8rem;
         border-radius: 0.5rem;
         box-shadow: $outer-shadow;
+        
     }
     img{
         height:8rem;
         border-radius: 0.5rem;
+        cursor: pointer;
+    }
+    img:hover{
+        filter: drop-shadow(8px 8px 10px $shadow-dark);
+    }
+}
+
+
+@keyframes title-hover{
+    0%, 100%{
+        letter-spacing: normal;
+    }
+
+    50%{
+        letter-spacing: 0.2em;
     }
 }

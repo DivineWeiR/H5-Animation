@@ -131,25 +131,29 @@
 .sky .cloud:nth-child(1) {
     left: 30px;
     top: 60px;
-    animation: cloud-move-bigger 13s infinite linear
+    -webkit-animation: cloud-move-bigger 13s infinite linear;
+            animation: cloud-move-bigger 13s infinite linear
 }
 
 .sky .cloud:nth-child(2) {
     left: 100px;
     top: 70px;
-    animation: cloud-move 13s infinite linear;
+    -webkit-animation: cloud-move 13s infinite linear;
+            animation: cloud-move 13s infinite linear;
 }
 
 .sky .cloud:nth-child(3) {
     left: 50%;
     top: 80px;
-    animation: cloud-move-bigger 13s infinite linear;
+    -webkit-animation: cloud-move-bigger 13s infinite linear;
+            animation: cloud-move-bigger 13s infinite linear;
 }
 
 .sky .cloud:nth-child(4) {
     left: 500px;
     top: 80px;
-    animation: cloud-move 13s infinite linear;
+    -webkit-animation: cloud-move 13s infinite linear;
+            animation: cloud-move 13s infinite linear;
 }
 
 .ground {
@@ -327,22 +331,26 @@
 
 .blades div.blade:nth-child(1) {
     transform: rotate(0deg);
-    animation: blade-rotate1 5s infinite linear;
+    -webkit-animation: blade-rotate1 5s infinite linear;
+            animation: blade-rotate1 5s infinite linear;
 }
 
 .blades div.blade:nth-child(2) {
     transform: rotate(90deg);
-    animation: blade-rotate2 5s infinite linear;
+    -webkit-animation: blade-rotate2 5s infinite linear;
+            animation: blade-rotate2 5s infinite linear;
 }
 
 .blades div.blade:nth-child(3) {
     transform: rotate(180deg);
-    animation: blade-rotate3 5s infinite linear;
+    -webkit-animation: blade-rotate3 5s infinite linear;
+            animation: blade-rotate3 5s infinite linear;
 }
 
 .blades div.blade:nth-child(4) {
     transform: rotate(270deg);
-    animation: blade-rotate4 5s infinite linear;
+    -webkit-animation: blade-rotate4 5s infinite linear;
+            animation: blade-rotate4 5s infinite linear;
 }
 
 .fence {
@@ -551,7 +559,8 @@
     bottom: 10px;
     transform: perspective(0.5em) rotateX(10deg) rotate(-120deg);
     transform-origin: bottom;
-    animation: grass-move 1s infinite linear;
+    -webkit-animation: grass-move 1s infinite linear;
+            animation: grass-move 1s infinite linear;
 }
 
 .grass span {
@@ -581,12 +590,30 @@
     border-left: transparent 4px solid;
 }
 
+@-webkit-keyframes cloud-move {
+    50% {
+        transform: translateX(20px);
+    }
+    0%, 100% {
+        transform: translateX(0);
+    }
+}
+
 @keyframes cloud-move {
     50% {
         transform: translateX(20px);
     }
     0%, 100% {
         transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes cloud-move-bigger {
+    50% {
+        transform: scale(1.5) translateX(20px);
+    }
+    0%, 100% {
+        transform: scale(1.5) translateX(0);
     }
 }
 
@@ -599,10 +626,24 @@
     }
 }
 
+@-webkit-keyframes blade-rotate1 {
+    0% {}
+    100% {
+        transform: rotate(+360deg);
+    }
+}
+
 @keyframes blade-rotate1 {
     0% {}
     100% {
         transform: rotate(+360deg);
+    }
+}
+
+@-webkit-keyframes blade-rotate2 {
+    0% {}
+    100% {
+        transform: rotate(450deg);
     }
 }
 
@@ -613,6 +654,13 @@
     }
 }
 
+@-webkit-keyframes blade-rotate3 {
+    0% {}
+    100% {
+        transform: rotate(540deg);
+    }
+}
+
 @keyframes blade-rotate3 {
     0% {}
     100% {
@@ -620,10 +668,26 @@
     }
 }
 
+@-webkit-keyframes blade-rotate4 {
+    0% {}
+    100% {
+        transform: rotate(630deg);
+    }
+}
+
 @keyframes blade-rotate4 {
     0% {}
     100% {
         transform: rotate(630deg);
+    }
+}
+
+@-webkit-keyframes grass-move {
+    50% {
+        transform: perspective(0.5em) rotateX(10deg) rotate(-125deg);
+    }
+    0%, 100% {
+        transform: perspective(0.5em) rotateX(10deg) rotate(-120deg);
     }
 }
 

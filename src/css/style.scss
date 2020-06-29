@@ -1,0 +1,106 @@
+$proto:max-width;
+$proto1:min-width;
+$value:999Wpx;
+$value1:1000px;
+$background:#ecf0f3;
+$shadow-dark:#d1d9e6;
+$shadow-highlight:#fff;
+$theme-color:#0C4F99;
+$theme-color-darker:#002c5c;
+$outer-shadow:3px 3px 5px $shadow-dark, -3px -3px 5px $shadow-highlight;
+$inner-shadow:2px 2px 5px $shadow-dark inset, -2px -2px 5px $shadow-highlight inset;
+*{
+    margin:0;
+    padding:0;
+}
+html,body{
+    width:100%;
+    height:100%;
+    background: $background;
+}
+.container{
+    box-sizing: border-box;
+    padding:2rem 1rem 1rem;
+    width:60%;
+    @media screen and ($proto:$value){
+        width:100%;
+    }
+    height:100%;
+    background: $background;
+    position: relative;
+    left:50%;
+    transform: translateX(-50%);
+    @media screen and ($proto1:$value1){
+        border-radius:1rem;
+    }
+    
+    box-shadow: $outer-shadow;
+    h1{
+        text-align: center;
+        text-transform: uppercase;
+        color: darkgray;
+        padding: 1rem;
+        width: 11rem;
+        margin:0 auto 1rem;
+        box-shadow: $outer-shadow;
+        border-radius: 0.5rem;
+        span{
+            color:#555555;
+            font-weight: 900;
+            padding:0.5rem 1rem;
+            margin-right: 1rem;
+            box-shadow: $inner-shadow;
+            border-radius: 0.5rem;
+        }
+
+    }
+}
+
+.item{
+    width:100%;
+    padding:1em;
+    box-shadow: $inner-shadow;
+    border-radius: 0.5rem;
+    display: grid;
+    box-sizing: border-box;
+    grid-template-columns: 5fr 1fr;
+    section{
+        margin-right: 1rem;
+        text-align: justify;
+        position: relative;
+        h2,h2 a{
+            text-decoration: none;
+            font-size: 1.2rem;
+            color:$theme-color;
+            transition: all 0.2s;
+        }
+        h2 a:hover{
+            color:$theme-color-darker;
+            letter-spacing: 0.2rem;
+        }
+        article p{
+            margin: 0.5rem;
+            font-size: 0.8rem;
+            color: #555555;
+        }
+        footer{
+            position: absolute;
+            bottom:0;
+            p{
+                color: #AAAAAA;
+            }
+        }
+    }
+    
+
+    div.img-box{
+        float:right;
+        height:8rem;
+        border-radius: 0.5rem;
+        box-shadow: $outer-shadow;
+    }
+    img{
+        height:8rem;
+        border-radius: 0.5rem;
+    }
+}

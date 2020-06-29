@@ -58,6 +58,11 @@ html, body {
   border-radius: 0.5rem;
 }
 
+.container h1:hover {
+  -webkit-animation: index-hover 2s linear;
+          animation: index-hover 2s linear;
+}
+
 .item {
   width: 100%;
   padding: 1em;
@@ -141,6 +146,28 @@ html, body {
   }
   50% {
     letter-spacing: 0.2em;
+  }
+}
+
+@-webkit-keyframes index-hover {
+  0% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
+@keyframes index-hover {
+  0% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
   }
 }
 /*# sourceMappingURL=style.css.map */

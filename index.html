@@ -1,32 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DivineWeiR的H5合集</title>
-    <link rel="stylesheet" href="src/css/style.css">
-</head>
+    <link rel="stylesheet" href="src/css/style.css" />
+  </head>
 
-<body>
+  <body>
     <article class="container">
-        <h1><span>目录</span>Index</h1>
-        <section>
-            <div class="item">
-                <section class="main-content">
-                    <h2><a href="windmill/">旋转的风车</a></h2>
-                    <article>
-                        <p>纯CSS打造的风车动画，其中包含了会动的云、风车扇叶、以及羊吃草。</p>
-                    </article>
-                    <footer>
-                        <p>CSS3动画</p>
-                    </footer>
-                </section>
-                <div class="img-box">
-                    <a href="windmill/"><img src="src/img/windmill.png" alt=""></a>
-                </div>
-            </div>
-        </section>
+      <h1><span>目录</span>Index</h1>
+      <div id="app">
+        <list-item v-for="item in items" :item="item"></list-item>
+      </div>
     </article>
-</body>
+  </body>
+
+  <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+  <script>
+    Vue.component("list-item", {
+      props: ["item"],
+      template:
+        '<div class="item">\
+            <section class="main-content">\
+                <h2>\
+                    <a :href="item.url">{{item.title}}</a>\
+                </h2>\
+                <article>\
+                    <p>{{item.description}}</p>\
+                </article>\
+                <footer>\
+                    <p>\
+                        <span v-for="category in item.categories" :category="category">{{category}}</span>\
+                    </p>\
+                </footer>\
+            </section>\
+            <div class="img-box">\
+                <a :href="item.url">\
+                    <img :src="item.imgPath" alt />\
+                </a>\
+            </div>\
+        </div>',
+    });
+
+    new Vue({
+      el: "#app",
+      data: {
+        items: [
+          {
+            url: "windmill/",
+            title: "旋转的风车",
+            description:
+              "纯CSS打造的风车动画，其中包含了会动的云、风车扇叶、以及羊吃草。",
+            categories: ["CSS动画"],
+            imgPath:"src/img/windmill.png"
+          },
+          {
+            url: "virtual-circle/",
+            title: "圆的假象",
+            description: "CSS动画，其中圆做直线运动，但显示出一种旋转的动画。",
+            categories: ["CSS动画"],
+            imgPath:"src/img/virtual-circle.png"
+          },
+          {
+            url: "taichi/",
+            title: "太极八卦",
+            description: "CSS实现的太极八卦阵。",
+            categories: ["CSS绘画"],
+            imgPath:"src/img/taichi.png"
+          },
+        ],
+      },
+    });
+  </script>
 </html>

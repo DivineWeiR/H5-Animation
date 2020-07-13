@@ -14,7 +14,7 @@ html, body {
           box-sizing: border-box;
   padding: 2rem 1rem 1rem;
   width: 60%;
-  height: 100%;
+  min-height: 100%;
   background: #ecf0f3;
   position: relative;
   left: 50%;
@@ -24,7 +24,7 @@ html, body {
           box-shadow: 3px 3px 5px #d1d9e6, -3px -3px 5px #fff;
 }
 
-@media screen and (max-width: 999Wpx) {
+@media screen and (max-width: 999px) {
   .container {
     width: 100%;
   }
@@ -129,6 +129,38 @@ html, body {
 .item img:hover {
   -webkit-filter: drop-shadow(8px 8px 10px #d1d9e6);
           filter: drop-shadow(8px 8px 10px #d1d9e6);
+}
+
+@media screen and (max-width: 599px) {
+  .item {
+    display: block;
+    -ms-grid-columns: unset;
+        grid-template-columns: unset;
+  }
+  .item section footer {
+    clear: both;
+    position: relative;
+    display: block;
+  }
+  .item section footer p {
+    text-align: right;
+  }
+  .item div.img-box {
+    display: block;
+    float: none;
+    width: 100%;
+    height: auto;
+    clear: both;
+    margin-top: 1rem;
+  }
+  .item div.img-box a {
+    width: 100%;
+    height: auto;
+  }
+  .item div.img-box img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 @-webkit-keyframes title-hover {

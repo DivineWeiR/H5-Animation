@@ -1,0 +1,139 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-color: #ececec;
+  height: 300px;
+  width: 300px;
+  border-radius: 300px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.container div {
+  width: 30px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 15px);
+}
+
+.container div span {
+  width: 26px;
+  height: 26px;
+  top: 0;
+  left: 2px;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 15px;
+  -webkit-animation: slide 4s infinite ease-in-out;
+          animation: slide 4s infinite ease-in-out;
+}
+
+.container div:nth-child(1) {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+
+.container div:nth-child(1) span {
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
+}
+
+.container div:nth-child(2) {
+  -webkit-transform: rotate(25grad);
+          transform: rotate(25grad);
+}
+
+.container div:nth-child(2) span {
+  -webkit-animation-delay: 250ms;
+          animation-delay: 250ms;
+}
+
+.container div:nth-child(3) {
+  -webkit-transform: rotate(50grad);
+          transform: rotate(50grad);
+}
+
+.container div:nth-child(3) span {
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+}
+
+.container div:nth-child(4) {
+  -webkit-transform: rotate(75grad);
+          transform: rotate(75grad);
+}
+
+.container div:nth-child(4) span {
+  -webkit-animation-delay: 750ms;
+          animation-delay: 750ms;
+}
+
+.container div:nth-child(5) {
+  -webkit-transform: rotate(100grad);
+          transform: rotate(100grad);
+}
+
+.container div:nth-child(5) span {
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
+}
+
+.container div:nth-child(6) {
+  -webkit-transform: rotate(125grad);
+          transform: rotate(125grad);
+}
+
+.container div:nth-child(6) span {
+  -webkit-animation-delay: 1250ms;
+          animation-delay: 1250ms;
+}
+
+.container div:nth-child(7) {
+  -webkit-transform: rotate(150grad);
+          transform: rotate(150grad);
+}
+
+.container div:nth-child(7) span {
+  -webkit-animation-delay: 1500ms;
+          animation-delay: 1500ms;
+}
+
+.container div:nth-child(8) {
+  -webkit-transform: rotate(175grad);
+          transform: rotate(175grad);
+}
+
+.container div:nth-child(8) span {
+  -webkit-animation-delay: 1750ms;
+          animation-delay: 1750ms;
+}
+
+@-webkit-keyframes slide {
+  0%, 100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(270px);
+            transform: translateY(270px);
+  }
+}
+
+@keyframes slide {
+  0%, 100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(270px);
+            transform: translateY(270px);
+  }
+}
+/*# sourceMappingURL=style.css.map */

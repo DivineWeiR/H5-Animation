@@ -1,0 +1,100 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+.container{
+    position: absolute;
+    left:50%;
+    top:50%;
+    background-color: #ececec;
+    height:300px;
+    width:300px;
+    border-radius: 300px;
+    transform: translate(-50%,-50%);
+    div{
+        width:30px;
+        height:300px;
+        // border-radius: 15px;
+        position: absolute;
+        // background-color:#aaa;
+        top:0;
+        left:calc(50% - 15px);
+        span {
+            width:26px;
+            height:26px;
+            top:0;
+            left:2px;
+            position: absolute;
+            background-color: #fff;
+            border-radius: 15px;
+            animation: slide 4s infinite ease-in-out;
+        }
+    }
+
+    div:nth-child(1){
+        transform: rotate(0);
+        span {
+            animation-delay: 0ms;
+        }
+    }
+    div:nth-child(2){
+        transform: rotate(25grad);
+        span {
+            animation-delay: 250ms;
+        }
+    }
+
+    div:nth-child(3){
+        transform: rotate(50grad);
+        span {
+            animation-delay: 500ms;
+        }
+    }
+
+    div:nth-child(4){
+        transform: rotate(75grad);
+        span {
+            animation-delay: 750ms;
+        }
+    }
+
+    div:nth-child(5){
+        transform: rotate(100grad);
+        span {
+            animation-delay: 1000ms;
+        }
+    }
+
+    div:nth-child(6){
+        transform: rotate(125grad);
+        span {
+            animation-delay: 1250ms;
+        }
+    }
+
+    div:nth-child(7){
+        transform: rotate(150grad);
+        span {
+            animation-delay: 1500ms;
+        }
+    }
+
+    div:nth-child(8){
+        transform: rotate(175grad);
+        span {
+            animation-delay: 1750ms;
+        }
+    }
+
+}
+
+
+@keyframes slide {
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(270px);
+    }
+}

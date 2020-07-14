@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>简易计算器</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="result"><span>{{operator}}</span> <span>{{screen}}</span></div>
+      <button @click="clearAll">CE</button>
+      <button @click="clear">C</button>
+      <button @click="backspace">←</button>
+      <button @click="storeOperator('/')">÷</button>
+      <button @click="append(7)">7</button>
+      <button @click="append(8)">8</button>
+      <button @click="append(9)">9</button>
+      <button @click="storeOperator('*')">×</button>
+      <button @click="append(4)">4</button>
+      <button @click="append(5)">5</button>
+      <button @click="append(6)">6</button>
+      <button @click="storeOperator('-')">-</button>
+      <button @click="append(1)">1</button>
+      <button @click="append(2)">2</button>
+      <button @click="append(3)">3</button>
+      <button @click="storeOperator('+')">+</button>
+      <button @click="reverse">±</button>
+      <button @click="append(0)">0</button>
+      <button @click="append('.')">.</button>
+      <button @click="equal">=</button>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        storeValue: "0",
+        screen: "0",
+        operator: "",
+        lastIsOperator: false,
+        hasDot: false,
+      },
+      methods: {
+        clear: function () {
+          this.screen = "0";
+        },
+        clearAll: function () {
+          this.screen = "0";
+          this.storeValue = "0";
+          this.operator = "";
+          this.lastIsOperator = false;
+          this.hasDot = false;
+        },
+        append: function (x) {
+          if (x == "." && !this.hasDot) {
+            this.screen += ".";
+            this.hasDot = true;
+            return;
+          }
+          if (this.screen != "0" && !this.lastIsOperator) {
+            this.screen += x;
+          } else {
+            this.screen = "" + x;
+          }
+          this.lastIsOperator = false;
+        },
+        storeOperator: function (op) {
+          this.storeValue = this.screen;
+          this.operator = op;
+          this.lastIsOperator = true;
+          this.hasDot = false;
+        },
+        equal: function () {
+          if (this.operator != "") {
+            switch (this.operator) {
+              case "+":
+                this.screen =
+                  parseFloat(this.storeValue) + parseFloat(this.screen);
+                break;
+              case "-":
+                this.screen =
+                  parseFloat(this.storeValue) - parseFloat(this.screen);
+                break;
+              case "*":
+                this.screen =
+                  parseFloat(this.storeValue) * parseFloat(this.screen);
+                break;
+              case "/":
+                this.screen =
+                  parseFloat(this.storeValue) / parseFloat(this.screen);
+                break;
+            }
+          }
+          this.storeValue = "0";
+        },
+        reverse: function () {
+          this.screen = -1 * parseFloat(this.screen);
+        },
+        backspace: function () {
+          this.screen = this.screen.substring(0, this.screen.length - 1);
+        },
+      },
+    });
+  </script>
+</html>

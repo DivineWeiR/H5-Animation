@@ -27,7 +27,8 @@ body {
     @media screen and (max-width: $value) {
         width: 100%;
     }
-    min-height: 100%;
+    min-height: 90%;
+    margin:1em 0;
     background: $background;
     position: relative;
     left: 50%;

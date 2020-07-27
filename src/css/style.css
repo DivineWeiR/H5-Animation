@@ -3,7 +3,8 @@
   padding: 0;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
   background: #ecf0f3;
@@ -84,10 +85,11 @@ html, body {
   position: relative;
 }
 
-.item section h2, .item section h2 a {
+.item section h2,
+.item section h2 a {
   text-decoration: none;
   font-size: 1.2rem;
-  color: #0C4F99;
+  color: #0c4f99;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
@@ -109,7 +111,16 @@ html, body {
 }
 
 .item section footer p {
-  color: #AAAAAA;
+  color: #aaaaaa;
+}
+
+.item section footer p span {
+  margin: 0 5px 0 0;
+}
+
+.item section footer p span:not(:last-child)::after {
+  content: "|";
+  padding-left: 5px;
 }
 
 .item div.img-box {
@@ -164,7 +175,8 @@ html, body {
 }
 
 @-webkit-keyframes title-hover {
-  0%, 100% {
+  0%,
+  100% {
     letter-spacing: normal;
   }
   50% {
@@ -173,7 +185,8 @@ html, body {
 }
 
 @keyframes title-hover {
-  0%, 100% {
+  0%,
+  100% {
     letter-spacing: normal;
   }
   50% {

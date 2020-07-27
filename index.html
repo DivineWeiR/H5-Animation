@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DivineWeiR的H5合集</title>
-    <link rel="stylesheet" href="src/css/style.css" />
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DivineWeiR的H5合集</title>
+        <link rel="stylesheet" href="src/css/style.css" />
+    </head>
 
-  <body>
-    <article class="container">
-      <h1><span>目录</span>Index</h1>
-      <div id="app">
-        <list-item v-for="item in items" :item="item"></list-item>
-      </div>
-    </article>
-  </body>
+    <body>
+        <article class="container">
+            <h1><span>目录</span>Index</h1>
+            <div id="app">
+                <list-item v-for="item in items" :item="item"></list-item>
+            </div>
+        </article>
+    </body>
 
-  <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
-  <script>
-    Vue.component("list-item", {
-      props: ["item"],
-      template:
-        '<div class="item">\
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <script>
+        Vue.component("list-item", {
+            props: ["item"],
+            template:
+                '<div class="item">\
             <section class="main-content">\
                 <h2>\
                     <a :href="item.url">{{item.title}}</a>\
@@ -41,43 +41,51 @@
                 </a>\
             </div>\
         </div>',
-    });
+        });
 
-    new Vue({
-      el: "#app",
-      data: {
-        items: [
-          {
-            url: "windmill/",
-            title: "旋转的风车",
-            description:
-              "纯CSS打造的风车动画，其中包含了会动的云、风车扇叶、以及羊吃草。",
-            categories: ["CSS动画"],
-            imgPath:"src/img/windmill.png"
-          },
-          {
-            url: "virtual-circle/",
-            title: "圆的假象",
-            description: "CSS动画，其中圆做直线运动，但显示出一种旋转的动画。",
-            categories: ["CSS动画"],
-            imgPath:"src/img/virtual-circle.png"
-          },
-          {
-            url: "taichi/",
-            title: "太极八卦",
-            description: "CSS实现的太极八卦阵。",
-            categories: ["CSS绘画"],
-            imgPath:"src/img/taichi.png"
-          },
-          {
-            url: "calculator/",
-            title: "简易计算器",
-            description: "vue.js实现的新拟态风格简易计算器",
-            categories: ["vue"],
-            imgPath:"src/img/calculator.png"
-          },
-        ],
-      },
-    });
-  </script>
+        new Vue({
+            el: "#app",
+            data: {
+                items: [
+                    {
+                        url: "windmill/",
+                        title: "旋转的风车",
+                        description:
+                            "纯CSS打造的风车动画，其中包含了会动的云、风车扇叶、以及羊吃草。",
+                        categories: ["CSS动画"],
+                        imgPath: "src/img/windmill.png",
+                    },
+                    {
+                        url: "virtual-circle/",
+                        title: "圆的假象",
+                        description:
+                            "CSS动画，其中圆做直线运动，但显示出一种旋转的动画。",
+                        categories: ["CSS动画"],
+                        imgPath: "src/img/virtual-circle.png",
+                    },
+                    {
+                        url: "taichi/",
+                        title: "太极八卦",
+                        description: "CSS实现的太极八卦阵。",
+                        categories: ["CSS绘画"],
+                        imgPath: "src/img/taichi.png",
+                    },
+                    {
+                        url: "calculator/",
+                        title: "简易计算器",
+                        description: "vue.js实现的新拟态风格简易计算器",
+                        categories: ["vue"],
+                        imgPath: "src/img/calculator.png",
+                    },
+                    {
+                        url: "circle-progress/",
+                        title: "圆形进度条",
+                        description: "分别用三种方法实现了圆形进度条",
+                        categories: ["css", "svg"],
+                        imgPath: "src/img/circle-progress.png",
+                    },
+                ],
+            },
+        });
+    </script>
 </html>

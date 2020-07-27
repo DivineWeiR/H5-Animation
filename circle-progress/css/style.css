@@ -1,0 +1,323 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  height: 100vh;
+  position: relative;
+  background: #e8f7fc;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.single {
+  padding: 10px;
+  height: 90%;
+}
+
+.single .content {
+  height: 100%;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  padding: 10px;
+  -webkit-box-shadow: 3px 3px 5px #d1d9e6, -3px -3px 5px #fff;
+          box-shadow: 3px 3px 5px #d1d9e6, -3px -3px 5px #fff;
+}
+
+.single .content footer {
+  position: absolute;
+  width: 100%;
+  height: 3em;
+  bottom: 0;
+}
+
+.single .content footer p {
+  padding: 0 10px;
+}
+
+#spinner1 {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+#spinner1 .wrapper {
+  width: 50px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+
+#spinner1 .wrapper.right {
+  right: 0;
+}
+
+#spinner1 .wrapper.left {
+  left: 0;
+}
+
+#spinner1 .circle {
+  width: 80px;
+  height: 80px;
+  border: 10px solid transparent;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+#spinner1 .rightcircle {
+  border-top: 10px solid lightcoral;
+  border-right: 10px solid lightcoral;
+  right: 0;
+  -webkit-animation: circle_right 5s linear infinite;
+          animation: circle_right 5s linear infinite;
+}
+
+#spinner1 .leftcircle {
+  border-bottom: 10px solid lightcoral;
+  border-left: 10px solid lightcoral;
+  left: 0;
+  -webkit-animation: circle_left 5s linear infinite;
+          animation: circle_left 5s linear infinite;
+}
+
+@-webkit-keyframes circle_right {
+  0% {
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+  }
+  50%,
+  100% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+}
+
+@keyframes circle_right {
+  0% {
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+  }
+  50%,
+  100% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+}
+
+@-webkit-keyframes circle_left {
+  0%,
+  50% {
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+  }
+  100% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+}
+
+@keyframes circle_left {
+  0%,
+  50% {
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+  }
+  100% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+}
+
+.spinner2-box {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+#spinner2 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  -webkit-animation: toggle-cover 10s infinite linear;
+          animation: toggle-cover 10s infinite linear;
+}
+
+#spinner2 .circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: lightcoral solid 10px;
+  position: absolute;
+  clip: rect(0, 50px, 100px, 0px);
+}
+
+#spinner2 .circle.right {
+  -webkit-animation: right-spin 10s infinite linear;
+          animation: right-spin 10s infinite linear;
+}
+
+#spinner2 .circle.left {
+  -webkit-animation: left-spin 10s infinite linear;
+          animation: left-spin 10s infinite linear;
+}
+
+@-webkit-keyframes toggle-cover {
+  0%,
+  25% {
+    clip: rect(0, 100px, 100px, 50px);
+  }
+  25.01%,
+  75% {
+    clip: rect(auto, auto, auto, auto);
+  }
+  75.01%,
+  100% {
+    clip: rect(0, 50px, 100px, 0);
+  }
+}
+
+@keyframes toggle-cover {
+  0%,
+  25% {
+    clip: rect(0, 100px, 100px, 50px);
+  }
+  25.01%,
+  75% {
+    clip: rect(auto, auto, auto, auto);
+  }
+  75.01%,
+  100% {
+    clip: rect(0, 50px, 100px, 0);
+  }
+}
+
+@-webkit-keyframes right-spin {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  25%,
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(540deg);
+            transform: rotate(540deg);
+  }
+}
+
+@keyframes right-spin {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  25%,
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(540deg);
+            transform: rotate(540deg);
+  }
+}
+
+@-webkit-keyframes left-spin {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  50%,
+  75% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(540deg);
+            transform: rotate(540deg);
+  }
+}
+
+@keyframes left-spin {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  50%,
+  75% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(540deg);
+            transform: rotate(540deg);
+  }
+}
+
+#spinner3 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+#spinner3 .progress {
+  stroke: lightcoral;
+  -webkit-animation: spin 5s linear infinite;
+          animation: spin 5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    stroke-dashoffset: 282.6px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes spin {
+  0% {
+    stroke-dashoffset: 282.6px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */

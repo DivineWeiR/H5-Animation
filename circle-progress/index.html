@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>圆形进度条</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="single">
+                <div class="content">
+                    <div id="spinner1">
+                        <div class="wrapper right">
+                            <div class="circle rightcircle"></div>
+                        </div>
+                        <div class="wrapper left">
+                            <div
+                                class="circle leftcircle"
+                                id="leftcircle"
+                            ></div>
+                        </div>
+                    </div>
+                    <footer>
+                        <p>使用border-top&bordor-left，旋转135度实现半圆</p>
+                    </footer>
+                </div>
+            </div>
+            <div class="single">
+                <div class="content">
+                    <div class="spinner2-box">
+                        <div id="spinner2">
+                            <div class="circle right"></div>
+                            <div class="circle left"></div>
+                        </div>
+                    </div>
+                    <footer><p>使用全部border + clip:rect()实现</p></footer>
+                </div>
+            </div>
+            <div class="single">
+                <div class="content">
+                    <svg id="spinner3" width="150px" height="150px" class="svg">
+                        <circle
+                            r="45"
+                            cy="75"
+                            cx="75"
+                            stroke-width="10"
+                            stroke="#EAEFF4"
+                            stroke-linejoin="round"
+                            stroke-linecap="round"
+                            fill="none"
+                        />
+                        <circle
+                            class="progress"
+                            r="45"
+                            cy="75"
+                            cx="75"
+                            stroke-width="10"
+                            stroke-linejoin="round"
+                            stroke-linecap="square"
+                            fill="none"
+                            stroke-dashoffset="0px"
+                            stroke-dasharray="282.6px"
+                        />
+                    </svg>
+                    <footer><p>使用svg，配合stroke-dashoffset实现。</p></footer>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

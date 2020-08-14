@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>时钟</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="clock">
+            <div class="digit-clock">
+                <span id="hour"></span>
+                <span class="gap">:</span>
+                <span id="min"></span>
+                <span class="gap">:</span>
+                <span id="second"></span>
+            </div>
+            <div class="meter">
+                <span class="tick"></span>
+                <span class="tick"></span>
+                <span class="tick"></span>
+                <span class="tick"></span>
+                <span class="tick"></span>
+                <span class="tick"></span>
+                <span class="tick"></span>
+                <span class="tick"></span>
+                <span class="tick"></span>
+                <span class="tick"></span>
+                <span class="tick"></span>
+                <span class="tick"></span>
+            </div>
+            <div class="spinner">
+                <span class="min"></span>
+                <span class="hour"></span>
+                <span class="second"></span>
+            </div>
+        </div>
+        <script>
+            window.onload = function () {
+                const deg = 6;
+                const $hourSpinner = document.querySelector(".hour");
+                const $minSpinner = document.querySelector(".min");
+                const $secondSpinner = document.querySelector(".second");
+
+                const $hourDigit = document.querySelector("#hour");
+                const $minDigit = document.querySelector("#min");
+                const $secondDigit = document.querySelector("#second");
+                setInterval(() => {
+                    let now = new Date();
+                    let h = now.getHours();
+                    let m = now.getMinutes();
+                    let s = now.getSeconds();
+                    console.log(h, m, s);
+                    $hourDigit.innerHTML = h;
+                    $minDigit.innerHTML = m;
+                    $secondDigit.innerHTML = s < 10 ? "0" + s : s;
+
+                    $hourSpinner.style.transform = `rotate(${
+                        h * 30 + (m * deg) / 12
+                    }deg)`;
+                    $minSpinner.style.transform = `rotate(${m * deg}deg)`;
+                    $secondSpinner.style.transform = `rotate(${s * deg}deg)`;
+                }, 1000);
+            };
+        </script>
+    </body>
+</html>

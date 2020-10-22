@@ -1,0 +1,62 @@
+@import url("https://fonts.font.im/css?family=Lobster");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color1: #e76161;
+    --color2: #fd79a8;
+    --color3: #0984e3;
+    --color4: #00b894;
+    --color5: #fdcb6e;
+    --color6: #e056fd;
+    --color7: #f97f51;
+    --color8: #bdc581;
+    --text-color: #913791;
+}
+html,
+body {
+    height: 100vh;
+    width: 100%;
+    background: #4c094c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 100%;
+    text-align: center;
+    font-family: "Lobster", cursive;
+    color: var(--text-color);
+    -webkit-text-stroke: 2.25px #fff;
+    font-size: 80px;
+}
+
+.container span {
+    display: inline-block;
+    animation: animate 3s ease-in-out infinite both;
+    animation-delay: calc(var(--i) * 120ms);
+}
+
+@keyframes animate {
+    0% {
+        text-shadow: 0 0 var(--color1), 0 0 var(--color2);
+        transform: translateY(100%) rotate(4deg);
+    }
+    33.3% {
+        text-shadow: 0 80px var(--color3), 0 150px var(--color4);
+    }
+    50% {
+        text-shadow: 0 0 var(--color5), 0 0 var(--color6);
+        transform: translateY(0) rotate(0deg);
+    }
+    66.6% {
+        text-shadow: 0 -80px var(--color7), 0 -150px var(--color8);
+    }
+    100% {
+        text-shadow: 0 0 var(--color1), 0 0 var(--color2);
+        transform: translateY(100%) rotate(4deg);
+    }
+}
